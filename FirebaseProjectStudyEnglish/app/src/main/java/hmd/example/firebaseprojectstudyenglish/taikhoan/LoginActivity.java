@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                             DB.iduser = mAuth.getCurrentUser().getUid();
                                             DB.CapNhatUser(DB.iduser);
-                                            rootNode = FirebaseDatabase.getInstance("https://fir-projectstudyenglish-da3b6-default-rtdb.asia-southeast1.firebasedatabase.app");
+                                            rootNode = FirebaseDatabase.getInstance();
                                             userref = rootNode.getReference("User").child(DB.iduser);
                                             userref.child("role").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                                 @Override
