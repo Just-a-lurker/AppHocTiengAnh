@@ -88,7 +88,7 @@ public class SignupActivity extends AppCompatActivity {
                                                 Toast.makeText(SignupActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
 
                                                 // if the user created intent to login activity
-                                                rootNode= FirebaseDatabase.getInstance();
+                                                rootNode= FirebaseDatabase.getInstance("https://fir-projectstudyenglish-da3b6-default-rtdb.asia-southeast1.firebasedatabase.app");
                                                 reference= rootNode.getReference("User");
                                                 User newuser = new User(mAuth.getCurrentUser().getUid(), hoten,0,email,sdt, 1);
                                                 reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(newuser);
